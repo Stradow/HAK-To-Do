@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "text": "Check emails",
+    "isDone": false
+  },
+  {
+    "id": 2,
+    "text": "Plan the day",
+    "isDone": false
+  },
+  {
+    "id": 3,
+    "text": "Work on main task",
+    "isDone": false
+  },
+  {
+    "id": 4,
+    "text": "Attend meetings or classes",
+    "isDone": false
+  },
+  {
+    "id": 5,
+    "text": "Review ongoing tasks",
+    "isDone": false
+  },
+  {
+    "id": 6,
+    "text": "Take a short break",
+    "isDone": false
+  },
+  {
+    "id": 7,
+    "text": "Exercise or stretch",
+    "isDone": false
+  },
+  {
+    "id": 8,
+    "text": "Prepare meals",
+    "isDone": false
+  },
+  {
+    "id": 9,
+    "text": "Clean workspace",
+    "isDone": false
+  },
+  {
+    "id": 10,
+    "text": "Reflect on the day",
+    "isDone": false
+  }
+]
