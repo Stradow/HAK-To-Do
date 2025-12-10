@@ -15,7 +15,9 @@ function Sidebar() {
 
       <ul>
         {daysOfWeek.map((day) => (
-          <li key={day}>{day}</li>
+          <li key={day}>
+            <button id="day-btn">{day}</button>
+          </li>
         ))}
       </ul>
     </div>
