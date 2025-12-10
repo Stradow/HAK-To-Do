@@ -1,8 +1,23 @@
 function Sidebar() {
+  const daysOfWeek = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
   return (
     <div className="sidebar">
-      <h2>The Sidebar component with the links to the Home and About page.</h2>
-      <p>Item list (days)</p>
+      <h2>Days</h2>
+
+      <ul>
+        {daysOfWeek.map((day) => (
+          <li key={day}>{day}</li>
+        ))}
+      </ul>
     </div>
   );
 }
