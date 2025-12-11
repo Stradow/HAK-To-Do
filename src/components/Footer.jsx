@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <div className="footer">
-      <h3>
-        The Footer component with the link to the GitHub repository of the
-        project.
-      </h3>
-      <p>FOOTER: Button - 404 not found</p>
+      <Link to={"https://github.com/Stradow/HAK-To-Do"}>
+        <img src="./src/assets/images/Githublogo.png" alt="git-hub-logo" />
+      </Link>
     </div>
   );
 }

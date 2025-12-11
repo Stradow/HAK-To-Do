@@ -1,7 +1,7 @@
 import { useState } from "react";
 import dailyTasks from "../data.json";
 
-function Body() {
+function Body({ selectedDay }) {
   const [tasks, setTasks] = useState(dailyTasks);
 
   function checkBoxChange(taskId) {
@@ -11,21 +11,28 @@ function Body() {
           id: oneTask.id,
           text: oneTask.text,
           isDone: !oneTask.isDone,
+          days: oneTask.days,
         };
       }
       return oneTask;
     });
     setTasks(updatedTasks);
   }
+
   function handleDeleteTask(taskId) {
     const updatedTasks = tasks.filter((oneTask) => {
       return oneTask.id !== taskId;
     });
+    setTasks(updatedTasks);
   }
+
+  const visibleTasks = tasks.filter((oneTask) => {
+    return oneTask.days.includes(selectedDay);
+  });
 
   return (
     <div className="body">
-      {tasks.map((oneTask) => (
+      {visibleTasks.map((oneTask) => (
         <div id="daily-task-container" key={oneTask.id}>
           <input
             type="checkbox"

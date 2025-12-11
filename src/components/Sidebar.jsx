@@ -1,4 +1,4 @@
-function Sidebar() {
+function Sidebar({ selectedDay, onDaySelect }) {
   const daysOfWeek = [
     "Monday",
     "Tuesday",
@@ -15,7 +15,7 @@ function Sidebar() {
 
       <ul>
         {daysOfWeek.map((day) => (
-          <li key={day}>
+          <li key={day} onClick={() => onDaySelect(day)}>
             <button id="day-btn">{day}</button>
           </li>
         ))}
