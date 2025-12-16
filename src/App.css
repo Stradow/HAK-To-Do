@@ -1,33 +1,274 @@
-.navbar {
-  min-height: 15vh;
-  background-color: antiquewhite;
-  padding: 10px;
+/* =========================
+   GLOBAL LAYOUT
+   ========================= */
+
+/* Main container holding Sidebar + Body */
+.main-container {
+  display: flex;
+  min-height: calc(100vh - 120px); /* Adjust if Navbar/Footer height changes */
 }
 
-.main-container {
-  min-height: 70vh;
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  height: 80px;
+  padding: 0 2rem;
+
+  background-color: #0f0f0f;
+  border-bottom: 1px solid #2a2a2a;
+
   display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
+
+/* Logo (left side) */
+.navbar img {
+  height: 40px;
+  width: auto;
+}
+
+/* Title */
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #c9a24d;
+  letter-spacing: 2px;
+}
+
+/* Tagline / prop sentence */
+.prop-sentence {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Optional: push text to the left if logo is added later */
+.navbar > *:last-child {
+  margin-left: auto;
+}
+
+/* =========================
+   SIDEBAR
+   ========================= */
 
 .sidebar {
-  width: 20%;
-  background-color: aliceblue;
-  padding: 15px;
+  width: 220px;
+  padding: 2rem 1.5rem;
+  background-color: #0f0f0f;
+  border-right: 1px solid #2a2a2a;
+  color: #eaeaea;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
+/* Sidebar title */
+.sidebar h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c9a24d;
+  letter-spacing: 1px;
+}
+
+/* Days list */
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
+
+/* List item */
+.sidebar li {
+  width: 100%;
+}
+
+/* Day button */
+#day-btn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+
+  color: #eaeaea;
+  text-align: left;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Day button hover effect */
+#day-btn:hover {
+  background-color: #c9a24d;
+  color: #121212;
+  border-color: #c9a24d;
+}
+
+/* =========================
+   BODY (TASK AREA)
+   ========================= */
 
 .body {
-  width: 80%;
-  background-color: rgb(95, 134, 168);
-  padding: 15px;
+  flex: 1;
+  padding: 2rem;
+  background-color: #121212;
+  color: #eaeaea;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
+/* =========================
+   TASK CONTAINER
+   ========================= */
+
+#daily-task-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 1.5rem;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+/* Checkbox styling */
+#daily-task-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #c9a24d;
+  cursor: pointer;
+}
+
+/* Task text */
+#daily-task-container span {
+  flex: 1;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* =========================
+   DELETE BUTTON
+   ========================= */
+
+#daily-task-container button {
+  background-color: transparent;
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Delete button hover */
+#daily-task-container button:hover {
+  background-color: #c9a24d;
+  color: #121212;
+}
+
+/* =========================
+   ADD TASK FORM
+   ========================= */
+
+form {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Label + input wrapper */
+form label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Text input */
+form input[type="text"] {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+/* Placeholder color */
+form input[type="text"]::placeholder {
+  color: #888;
+}
+
+/* Add task button */
+form button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+
+  background-color: #c9a24d;
+  color: #121212;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Add button hover */
+form button:hover {
+  background-color: #e0b85c;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer {
-  min-height: 15vh;
-  background-color: rgb(173, 143, 105);
-  padding: 10px;
+  height: 60px;
+  background-color: #c9a24d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid #b08d3c;
+}
+
+/* GitHub link */
+.footer a {
+  display: flex;
+  align-items: center;
+}
+
+/* GitHub logo */
+.footer img {
+  height: 28px;
+  width: auto;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover effect */
+.footer img:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
 }

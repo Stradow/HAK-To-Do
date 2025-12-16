@@ -8,23 +8,39 @@ function Body({ selectedDay }) {
 
   function checkBoxChange(taskId) {
     const updatedTasks = tasks.map((oneTask) => {
-      if (oneTask.id === taskId) {
-        return {
-          id: oneTask.id,
-          text: oneTask.text,
-          isDone: !oneTask.isDone,
-          days: oneTask.days,
-        };
-      }
-      return oneTask;
+      if (oneTask.id !== taskId) return oneTask;
+
+      const doneDays = oneTask.doneDays || [];
+
+      const isDoneToday = doneDays.includes(selectedDay);
+
+      return {
+        ...oneTask,
+        doneDays: isDoneToday
+          ? doneDays.filter((day) => day !== selectedDay)
+          : [...doneDays, selectedDay],
+      };
     });
     setTasks(updatedTasks);
   }
 
   function handleDeleteTask(taskId) {
-    const updatedTasks = tasks.filter((oneTask) => {
-      return oneTask.id !== taskId;
-    });
+    const updatedTasks = tasks
+      .map((oneTask) => {
+        if (oneTask.id !== taskId) return oneTask;
+
+        const updatedDays = oneTask.days.filter((day) => day !== selectedDay);
+
+        return {
+          ...oneTask,
+          days: updatedDays,
+          doneDays: (oneTask.doneDays || []).filter(
+            (day) => day !== selectedDay
+          ),
+        };
+      })
+      .filter((oneTask) => oneTask.days.length > 0);
+
     setTasks(updatedTasks);
   }
 
@@ -56,7 +72,7 @@ function Body({ selectedDay }) {
         <div id="daily-task-container" key={oneTask.id}>
           <input
             type="checkbox"
-            checked={oneTask.isDone}
+            checked={(oneTask.doneDays || []).includes(selectedDay)}
             onChange={() => checkBoxChange(oneTask.id)}
           />
           <span>{oneTask.text}</span>

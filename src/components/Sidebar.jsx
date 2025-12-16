@@ -16,7 +16,12 @@ function Sidebar({ selectedDay, onDaySelect }) {
       <ul>
         {daysOfWeek.map((day) => (
           <li key={day} onClick={() => onDaySelect(day)}>
-            <button id="day-btn">{day}</button>
+            <button
+              id="day-btn"
+              className={selectedDay === day ? "active-day" : ""}
+            >
+              {day}
+            </button>
           </li>
         ))}
       </ul>
