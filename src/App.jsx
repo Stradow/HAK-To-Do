@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import { Route, Routes } from "react-router-dom";
 import Notfoundpage from "./pages/Notfoundpage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [selectedDay, setSelectedDay] = useState("Monday");
@@ -24,6 +25,7 @@ function App() {
             </div>
           }
         />
+        <Route path="/about-us" element={<AboutPage /> } />
         <Route path="*" element={<Notfoundpage />} />
       </Routes>
 

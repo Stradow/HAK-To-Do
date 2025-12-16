@@ -9,7 +9,7 @@ function Notfoundpage() {
 
       <img
         className="notfound-logo"
-        src="./src/assets/images/hakLogoGold.png"
+        src="./src/assets/images/HAKLogo.png"
         alt="HAK Logo"
       />
 
