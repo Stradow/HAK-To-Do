@@ -3,12 +3,20 @@ import { Link } from "react-router-dom";
 
 function Notfoundpage() {
   return (
-    <>
-      <h1>Notfoundpage</h1>
+    <div className="notfound-container">
+      <h1 className="notfound-code">404</h1>
+      <h2 className="notfound-title">Not Found</h2>
+
+      <img
+        className="notfound-logo"
+        src="./src/assets/images/hakLogoGold.png"
+        alt="HAK Logo"
+      />
+
       <Link to="/">
-        <button>Back to homepage</button>
+        <button className="notfound-btn">Back to homepage</button>
       </Link>
-    </>
+    </div>
   );
 }
 

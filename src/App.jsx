@@ -13,13 +13,19 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="main-container">
-        <Sidebar selectedDay={selectedDay} onDaySelect={setSelectedDay} />
-        <Routes>
-          <Route path="*" element={<Notfoundpage />} />
-          <Route path="/" element={<Body selectedDay={selectedDay} />} />
-        </Routes>
-      </div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="main-container">
+              <Sidebar selectedDay={selectedDay} onDaySelect={setSelectedDay} />
+              <Body selectedDay={selectedDay} />
+            </div>
+          }
+        />
+        <Route path="*" element={<Notfoundpage />} />
+      </Routes>
 
       <Footer />
     </>

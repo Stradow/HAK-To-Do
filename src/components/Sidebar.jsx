@@ -19,6 +19,7 @@ function Sidebar({ selectedDay, onDaySelect }) {
             <button
               id="day-btn"
               className={selectedDay === day ? "active-day" : ""}
+              onClick={() => onDaySelect(day)}
             >
               {day}
             </button>

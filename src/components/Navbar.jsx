@@ -5,7 +5,7 @@ function Navbar() {
       <p className="prop-sentence">
         <i>Set up your day, and HAK it!</i>
       </p>
-      <img alt="HAK Logo" />
+      <img alt="HAK Logo" src="./src/assets/images/hakLogoGold.png" />
     </div>
   );
 }

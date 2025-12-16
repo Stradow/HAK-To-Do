@@ -5,7 +5,7 @@
 /* Main container holding Sidebar + Body */
 .main-container {
   display: flex;
-  min-height: calc(100vh - 120px); /* Adjust if Navbar/Footer height changes */
+  min-height: calc(100vh - 120px);
 }
 
 /* =========================
@@ -15,7 +15,6 @@
 .navbar {
   height: 80px;
   padding: 0 2rem;
-
   background-color: #0f0f0f;
   border-bottom: 1px solid #2a2a2a;
 
@@ -24,9 +23,9 @@
   gap: 1.5rem;
 }
 
-/* Logo (left side) */
+/* Logo */
 .navbar img {
-  height: 40px;
+  height: 70px;
   width: auto;
 }
 
@@ -38,7 +37,7 @@
   letter-spacing: 2px;
 }
 
-/* Tagline / prop sentence */
+/* Tagline */
 .prop-sentence {
   font-size: 0.9rem;
   color: #aaa;
@@ -46,7 +45,6 @@
   white-space: nowrap;
 }
 
-/* Optional: push text to the left if logo is added later */
 .navbar > *:last-child {
   margin-left: auto;
 }
@@ -58,7 +56,12 @@
 .sidebar {
   width: 220px;
   padding: 2rem 1.5rem;
-  background-color: #0f0f0f;
+
+  background-image: url("/src/assets/images/BackgroundBlackGold.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   border-right: 1px solid #2a2a2a;
   color: #eaeaea;
 
@@ -69,10 +72,17 @@
 
 /* Sidebar title */
 .sidebar h2 {
-  font-size: 1.2rem;
+  width: 85%;
+  padding: 0.8rem 1rem;
+
+  background-color: #000;
+  border-radius: 8px;
+
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #c9a24d;
+  color: #8d6819;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 /* Days list */
@@ -91,7 +101,7 @@
   width: 100%;
 }
 
-/* Day button */
+/* Day button (default state) */
 #day-btn {
   width: 100%;
   padding: 0.6rem 1rem;
@@ -108,11 +118,39 @@
   transition: all 0.2s ease;
 }
 
-/* Day button hover effect */
-#day-btn:hover {
-  background-color: #c9a24d;
+/* Hover (only when NOT active) */
+#day-btn:hover:not(.active-day) {
+  background-color: #8d6819;
   color: #121212;
+  border-color: #8d6819;
+}
+
+/* =========================
+   ACTIVE (SELECTED) DAY
+   ========================= */
+
+.active-day {
+  background-color: #0b0b0b;
+  color: #c9a24d;
   border-color: #c9a24d;
+  font-weight: 800;
+
+  box-shadow: 0 0 0 2px rgba(201, 162, 77, 0.25);
+  transform: translateX(4px);
+
+  position: relative;
+}
+
+/* Left gold indicator */
+.active-day::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 4px;
+  border-radius: 8px;
+  background-color: #c9a24d;
 }
 
 /* =========================
@@ -146,7 +184,7 @@
   border: 1px solid #2a2a2a;
 }
 
-/* Checkbox styling */
+/* Checkbox */
 #daily-task-container input[type="checkbox"] {
   width: 18px;
   height: 18px;
@@ -177,7 +215,6 @@
   transition: all 0.2s ease;
 }
 
-/* Delete button hover */
 #daily-task-container button:hover {
   background-color: #c9a24d;
   color: #121212;
@@ -194,7 +231,6 @@ form {
   align-items: center;
 }
 
-/* Label + input wrapper */
 form label {
   flex: 1;
   display: flex;
@@ -213,7 +249,6 @@ form input[type="text"] {
   color: #eaeaea;
 }
 
-/* Placeholder color */
 form input[type="text"]::placeholder {
   color: #888;
 }
@@ -232,7 +267,6 @@ form button {
   transition: background-color 0.2s ease;
 }
 
-/* Add button hover */
 form button:hover {
   background-color: #e0b85c;
 }
@@ -252,13 +286,11 @@ form button:hover {
   border-top: 1px solid #b08d3c;
 }
 
-/* GitHub link */
 .footer a {
   display: flex;
   align-items: center;
 }
 
-/* GitHub logo */
 .footer img {
   height: 28px;
   width: auto;
@@ -267,8 +299,104 @@ form button:hover {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Hover effect */
 .footer img:hover {
   transform: scale(1.05);
   opacity: 0.85;
+}
+
+/* =========================
+   NOT FOUND PAGE (Dark + Gold)
+   ========================= */
+
+.notfound-container {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #121212;
+  color: #eaeaea;
+  text-align: center;
+
+  gap: 1.2rem;
+  padding: 2rem;
+}
+
+/* 404 with gold glow */
+.notfound-code {
+  font-size: 6.5rem;
+  font-weight: 900;
+  color: #c9a24d;
+  letter-spacing: 6px;
+  line-height: 1;
+
+  text-shadow: 0 0 10px rgba(201, 162, 77, 0.45),
+    0 0 22px rgba(201, 162, 77, 0.28), 0 0 40px rgba(201, 162, 77, 0.18);
+}
+
+/* Subtitle */
+.notfound-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #c9a24d;
+  margin-bottom: 0.5rem;
+}
+
+/* Logo with pulse animation */
+.notfound-logo {
+  height: 130px;
+  width: auto;
+
+  margin: 0.8rem 0 1.8rem;
+
+  animation: hakPulse 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(201, 162, 77, 0.25));
+}
+
+/* Pulse keyframes */
+@keyframes hakPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(201, 162, 77, 0.18));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 16px rgba(201, 162, 77, 0.35));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(201, 162, 77, 0.18));
+  }
+}
+
+/* Back button (same visual language as day buttons but bigger) */
+.notfound-btn {
+  padding: 0.9rem 2.2rem;
+
+  background-color: #1a1a1a;
+  border: 2px solid #c9a24d;
+  border-radius: 10px;
+
+  color: #c9a24d;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.notfound-btn:hover {
+  background-color: #c9a24d;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201, 162, 77, 0.18);
+}
+
+/* Optional: focus style for accessibility */
+.notfound-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.25);
 }
