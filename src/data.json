@@ -1,42 +1,19 @@
 [
   {
     "id": 1,
-    "text": "Check emails",
-    "isDone": false,
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-  },
-  {
-    "id": 2,
     "text": "Plan the day",
     "isDone": false,
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
   },
+
   {
-    "id": 3,
-    "text": "Work on main task",
-    "isDone": false,
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-  },
-  {
-    "id": 4,
-    "text": "Attend meetings or classes",
-    "isDone": false,
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-  },
-  {
-    "id": 5,
-    "text": "Review ongoing tasks",
-    "isDone": false,
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-  },
-  {
-    "id": 6,
+    "id": 2,
     "text": "Take a short break",
     "isDone": false,
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
   },
   {
-    "id": 7,
+    "id": 3,
     "text": "Exercise or stretch",
     "isDone": false,
     "days": [
@@ -50,7 +27,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 4,
     "text": "Prepare meals",
     "isDone": false,
     "days": [
@@ -64,13 +41,13 @@
     ]
   },
   {
-    "id": 9,
+    "id": 5,
     "text": "Clean workspace",
     "isDone": false,
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
   },
   {
-    "id": 10,
+    "id": 6,
     "text": "Reflect on the day",
     "isDone": false,
     "days": [

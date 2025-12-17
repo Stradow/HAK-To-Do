@@ -20,6 +20,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.5rem;
 }
 
@@ -31,22 +32,19 @@
 
 /* Title */
 .title {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2.4rem;
+  font-weight: 700;
   color: #c9a24d;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-align: center;
 }
 
 /* Tagline */
 .prop-sentence {
-  font-size: 0.9rem;
-  color: #aaa;
+  font-size: 2rem;
+  color: #c9a24d;
   margin-left: 0.5rem;
   white-space: nowrap;
-}
-
-.navbar > *:last-child {
-  margin-left: auto;
 }
 
 a {
@@ -56,7 +54,7 @@ a {
 
 .active {
   font-size: 1.2rem;
-  color: white;
+  color: #c9a24d;
 }
 
 /* =========================
@@ -429,4 +427,80 @@ form button:hover {
 
 .first-letter {
   font-size: 40px;
+}
+
+/* =========================
+   ABOUT US PAGE
+   ========================= */
+
+.about-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-container h1 {
+  color: #f5d27a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#developers-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#developers-container > div {
+  flex: 1;
+  background: rgba(15, 15, 20, 0.9);
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15),
+    inset 0 0 10px rgba(212, 175, 55, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#developers-container > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35),
+    inset 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+#developers-container h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.first-letter {
+  color: #d4af37;
+  font-size: 1.8rem;
+}
+
+#developers-container a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #f5d27a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#developers-container a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+.about-container {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  min-height: calc(100vh - 160px);
 }
